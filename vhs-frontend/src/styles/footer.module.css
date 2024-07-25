@@ -1,0 +1,17 @@
+.footerDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--light-yellow-background);
+    gap: 20px;
+    position: absolute;
+    bottom: 0px;
+    padding: 10px 0px;
+}
+
+#homeLogo{
+    width: 150px;
+    height: auto;
+    cursor: pointer;
+}
