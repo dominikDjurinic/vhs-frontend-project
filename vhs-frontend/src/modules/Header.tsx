@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/header.module.css";
-import { SearchBar } from "@/components/searchBar";
+import { SearchBar } from "@/components/SearchBar";
 import { headerNavigation } from "@/model/headerNavigation";
 import Link from "next/link";
 

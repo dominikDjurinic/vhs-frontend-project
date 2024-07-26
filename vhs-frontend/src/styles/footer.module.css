@@ -5,9 +5,10 @@
     justify-content: space-evenly;
     background-color: var(--light-yellow-background);
     gap: 20px;
-    position: absolute;
+    position: sticky;
     bottom: 0px;
     padding: 10px 0px;
+    margin-top: 50px;
 }
 
 #homeLogo{
