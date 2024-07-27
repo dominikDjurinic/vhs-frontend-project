@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <div className={styles.footerDiv}>
       <p>Created: Dominik Đurinić</p>
-      <Link href={"/"}>
+      <Link href={"/catalogue"}>
         <Image
           id={styles.homeLogo}
           src={"/title-logo.png"}

@@ -8,7 +8,7 @@ export function Header(params: { selectedNav: string }) {
   return (
     <div className={styles.headerContainer}>
       <div className={styles.searchLogo}>
-        <Link href={"/"}>
+        <Link href={"/catalogue"}>
           <Image
             id={styles.homeLogo}
             src={"/title-logo.png"}
@@ -25,7 +25,7 @@ export function Header(params: { selectedNav: string }) {
           <Link href={`/${nav.toLowerCase()}`} key={nav}>
             <p
               className={`${
-                params.selectedNav === nav ? styles.selectedNav : null
+                params.selectedNav === nav ? styles.selectedNav : ""
               }`}
             >
               {nav}

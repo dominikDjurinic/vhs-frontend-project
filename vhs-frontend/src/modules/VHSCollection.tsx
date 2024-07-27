@@ -4,10 +4,19 @@ import { VHSGridCell } from "@/modules/VHSCell/GridCell";
 import { VHSListCell } from "@/modules/VHSCell/ListCell";
 import styles from "@/styles/catalogue.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function VHSCollection(params: { vhs: VHSDetails[] }) {
   const [gridView, setGridView] = useState(true);
+
+  useEffect(() => {
+    let view = localStorage.getItem("gridView");
+    if (view === "true") {
+      setGridView(true);
+    } else {
+      setGridView(false);
+    }
+  }, []);
 
   return (
     <>
@@ -24,7 +33,10 @@ export function VHSCollection(params: { vhs: VHSDetails[] }) {
               alt="grid"
               width={18}
               height={18}
-              onClick={() => setGridView(true)}
+              onClick={() => {
+                setGridView(true);
+                localStorage.setItem("gridView", "true");
+              }}
             ></Image>
             <Image
               className={styles.switchImg}
@@ -32,7 +44,10 @@ export function VHSCollection(params: { vhs: VHSDetails[] }) {
               alt="list"
               width={18}
               height={18}
-              onClick={() => setGridView(false)}
+              onClick={() => {
+                setGridView(false);
+                localStorage.setItem("gridView", "false");
+              }}
             ></Image>
           </div>
         </div>

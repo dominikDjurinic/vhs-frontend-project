@@ -10,16 +10,20 @@ export function VHSListCell(params: { vhs: VHSDetails }) {
     <>
       <div className={styles.listCell}>
         <FavouriteBtn />
-        <Image
-          className="duckPlaceholder"
-          src={"/logoNotext.png"}
-          alt="title logo duck"
-          width={200}
-          height={200}
-        ></Image>
+        <Link href={`/details/${params.vhs.id}`}>
+          <Image
+            className="duckPlaceholder"
+            src={"/logoNotext.png"}
+            alt="title logo duck"
+            width={200}
+            height={200}
+          ></Image>
+        </Link>
         <div className={styles.listCellContainer}>
           <div className={styles.listCellInfo}>
-            <p className={styles.vhsTitleList}>{params.vhs.title}</p>
+            <Link href={`/details/${params.vhs.id}`}>
+              <p className={styles.vhsTitleList}>{params.vhs.title}</p>
+            </Link>
             <p className={styles.priceContainer}>
               <span className={styles.vhsPrice}>{params.vhs.rentalPrice}</span>{" "}
               €/day
@@ -29,10 +33,16 @@ export function VHSListCell(params: { vhs: VHSDetails }) {
             </p>
             <p>
               Released:{" "}
-              <span className="boldText">{params.vhs.releasedAt}</span>
+              <span className="boldText">{params.vhs.releasedAt}.</span>
             </p>
-            <p>
-              Available: <span className="boldText">{params.vhs.quantity}</span>
+            <p
+              className={`${
+                params.vhs.quantity > 0
+                  ? styles.availableP
+                  : styles.notAvailableP
+              }`}
+            >
+              <span className="boldText">{params.vhs.quantity}</span> Available
             </p>
           </div>
           <div className={styles.readCartDiv}>

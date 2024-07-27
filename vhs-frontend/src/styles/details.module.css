@@ -1,0 +1,111 @@
+.detailsMainDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailsContainer{
+    min-height: 50vh;
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 2px gray);
+    background-color: white;
+    gap: 50px;
+}
+
+.detailsContainer > img{
+    padding: 0px 80px;
+}
+
+.detailsDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.detailsInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.vhsTitle{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.vhsCategory{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.vhsPrice{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.detailsRentalDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    padding-right: 50px;
+}
+
+.detailsRentalDiv > p{
+    margin: 5px;
+}
+
+.descriptionContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionDiv{
+    width: 70%;
+    height: fit-content;
+}
+
+.descriptionDiv > p{
+    margin: 5px 0px;
+}
+
+.navBtn{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+.backNavBtn{
+    position: absolute;
+    top: 105px;
+    left: 20px;
+}
+
+.editNavBtn{
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+}
+
+.editNavBtn > div > p{
+    font-size: 16px;
+    text-decoration: underline;
+} 
+
+.availableP{
+    color: var(--green-color);
+}
+
+.notAvailableP{
+    color: var(--red-color);
+}

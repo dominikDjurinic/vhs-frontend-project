@@ -1,4 +1,5 @@
 export interface VHSDetails {
+  //interface for details about VHS movie
   id: number;
   title: string;
   description: string;

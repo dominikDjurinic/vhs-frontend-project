@@ -104,3 +104,11 @@
 .readCartDiv > a > p{
     margin: 0px;
 }
+
+.availableP{
+    color: var(--green-color);
+}
+
+.notAvailableP{
+    color: var(--red-color);
+}

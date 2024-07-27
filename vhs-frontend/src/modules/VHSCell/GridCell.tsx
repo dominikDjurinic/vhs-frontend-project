@@ -10,14 +10,18 @@ export function VHSGridCell(params: { vhs: VHSDetails }) {
     <>
       <div className={styles.gridCell}>
         <FavouriteBtn />
-        <Image
-          className="duckPlaceholder"
-          src={"/logoNotext.png"}
-          alt="title logo duck"
-          width={200}
-          height={200}
-        ></Image>
-        <p className={styles.vhsTitleGrid}>{params.vhs.title}</p>
+        <Link href={`/details/${params.vhs.id}`}>
+          <Image
+            className="duckPlaceholder"
+            src={"/logoNotext.png"}
+            alt="title logo duck"
+            width={200}
+            height={200}
+          ></Image>
+        </Link>
+        <Link href={`/details/${params.vhs.id}`}>
+          <p className={styles.vhsTitleGrid}>{params.vhs.title}</p>
+        </Link>
         <div className={styles.gridCellCatPrice}>
           <p className={styles.vhsCategory}>{params.vhs.genre}</p>
           <p>
@@ -26,6 +30,13 @@ export function VHSGridCell(params: { vhs: VHSDetails }) {
           </p>
         </div>
         <AddToCart />
+        <p
+          className={`${
+            params.vhs.quantity > 0 ? styles.availableP : styles.notAvailableP
+          }`}
+        >
+          <span className="boldText">{params.vhs.quantity}</span> Available
+        </p>
         <Link href={`/details/${params.vhs.id}`}>
           <p className={styles.vhsLink}>Read details</p>
         </Link>
