@@ -6,7 +6,7 @@ import styles from "@/styles/details.module.css";
 import Link from "next/link";
 
 export async function VHSDetailsCell(params: { movieId: number }) {
-  //get VHS movie details by id from database
+  /**GET VHS movie details by id from database**/
   const response = await fetch(
     `http://localhost:3000/api/vhs/${params.movieId}`,
     {

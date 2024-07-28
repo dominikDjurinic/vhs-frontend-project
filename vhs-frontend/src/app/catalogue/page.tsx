@@ -7,7 +7,7 @@ import Link from "next/link";
 import styles from "@/styles/catalogue.module.css";
 
 export default async function Catalogue() {
-  //get all VHS movies from database
+  /**GET all VHS movies from database**/
   const response = await fetch(`http://localhost:3000/api/vhs`, {
     method: "GET",
   });

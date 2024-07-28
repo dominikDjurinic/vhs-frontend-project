@@ -1,4 +1,5 @@
 "use client";
+import { NewVHSDetails } from "@/model/vhs";
 import { AlertMsg } from "@/modules/AlertMsg";
 import { Footer } from "@/modules/Footer";
 import { AboutSection } from "@/modules/Form/AboutSection";
@@ -15,14 +16,29 @@ import { useState } from "react";
 export default function NewMovie() {
   const sectionNames = ["About", "Description", "Rent", "Final preview"];
 
-  const [step, setStep] = useState(0);
-  const [end, setEnd] = useState(false);
+  const [step, setStep] = useState(0); //new movie form step counter
+  const [end, setEnd] = useState(false); //after submitting form show alert message
+  const [newMovie, setNewMovie] = useState<NewVHSDetails>({
+    title: "",
+    description: "",
+    genre: "",
+    duration: 0,
+    releasedAt: 0,
+    rentalPrice: 0,
+    rentalDuration: 0,
+  });
 
   return (
     <>
       <div className="wrapper">
         <Header selectedNav="" />
-        {end ? <AlertMsg typeMsg="Add" end={(end) => setEnd(end)} /> : null}
+        {end ? (
+          <AlertMsg
+            typeMsg="Add"
+            end={(end) => setEnd(end)}
+            newMovie={newMovie}
+          />
+        ) : null}
         <Link href={"/catalogue"} className={styles.closeNavBtn}>
           <div className={styles.navBtn}>
             <Image
@@ -41,10 +57,25 @@ export default function NewMovie() {
           </p>
         </div>
         <div className={styles.formMainDiv}>
-          {step === 0 ? <AboutSection /> : null}
-          {step === 1 ? <DescriptionSection /> : null}
-          {step === 2 ? <RentSection /> : null}
-          {step === 3 ? <FinalSection /> : null}
+          {step === 0 ? (
+            <AboutSection
+              newMovie={(newMovie) => setNewMovie(newMovie)}
+              movie={newMovie}
+            />
+          ) : null}
+          {step === 1 ? (
+            <DescriptionSection
+              newMovie={(newMovie) => setNewMovie(newMovie)}
+              movie={newMovie}
+            />
+          ) : null}
+          {step === 2 ? (
+            <RentSection
+              newMovie={(newMovie) => setNewMovie(newMovie)}
+              movie={newMovie}
+            />
+          ) : null}
+          {step === 3 ? <FinalSection movie={newMovie} /> : null}
         </div>
         <div className={styles.btnContainer}>
           <div className={styles.btnDiv}>

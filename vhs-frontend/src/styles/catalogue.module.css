@@ -70,6 +70,10 @@
     filter: drop-shadow(0px 3px 2px gray);
 }
 
+.addNewMovieBtnIcon:hover{
+    background-color: var(--hover-yellow);
+}
+
   
 .addMovieMsg{
     width: 80px;

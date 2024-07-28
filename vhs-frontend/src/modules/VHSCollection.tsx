@@ -7,10 +7,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export function VHSCollection(params: { vhs: VHSDetails[] }) {
-  const [gridView, setGridView] = useState(true);
+  const [gridView, setGridView] = useState(true); //grid/list view selection
 
   useEffect(() => {
+    //reading from users local storage grid/list view preference
     let view = localStorage.getItem("gridView");
+
     if (view === "true") {
       setGridView(true);
     } else {
@@ -35,7 +37,7 @@ export function VHSCollection(params: { vhs: VHSDetails[] }) {
               height={18}
               onClick={() => {
                 setGridView(true);
-                localStorage.setItem("gridView", "true");
+                localStorage.setItem("gridView", "true"); //setting users preference
               }}
             ></Image>
             <Image
@@ -46,7 +48,7 @@ export function VHSCollection(params: { vhs: VHSDetails[] }) {
               height={18}
               onClick={() => {
                 setGridView(false);
-                localStorage.setItem("gridView", "false");
+                localStorage.setItem("gridView", "false"); //setting users preference
               }}
             ></Image>
           </div>

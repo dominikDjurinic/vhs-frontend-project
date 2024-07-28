@@ -2,13 +2,21 @@
 import styles from "@/styles/form.module.css";
 import { inputNames } from "@/model/inputNames";
 import { useEffect, useState } from "react";
+import { NewVHSDetails } from "@/model/vhs";
 
-export function InputDiv(params: { name: string }) {
+export function InputDiv(params: {
+  name: string;
+  newMovie: (newMovie: NewVHSDetails) => void;
+  movie: NewVHSDetails;
+}) {
   const [ind, setInd] = useState<number | undefined>(undefined);
+  //const [modelName, setModelName] = useState<string>(""); //input name - property of NewVHSDetails object
 
   useEffect(() => {
+    //finding input names
     const index = inputNames.findIndex(({ name }) => name === params.name);
     setInd(index);
+    //setModelName(inputNames[index].modelName);
   }, [params.name]);
 
   return (
@@ -23,6 +31,21 @@ export function InputDiv(params: { name: string }) {
             id={`${params.name}Input`}
             name={`${params.name}Input`}
             placeholder={ind !== undefined ? inputNames[ind].placeholder : ""}
+            onChange={(e) =>
+              params.newMovie({
+                ...params.movie,
+                [`${
+                  ind !== undefined ? inputNames[ind].modelName : ""
+                }`]: `${e.target.value}`,
+              })
+            }
+            value={
+              params.movie[
+                `${
+                  ind !== undefined ? inputNames[ind].modelName : ""
+                }` as keyof NewVHSDetails
+              ]
+            }
           ></textarea>
         ) : (
           <input
@@ -30,6 +53,27 @@ export function InputDiv(params: { name: string }) {
             id={`${params.name}Input`}
             name={`${params.name}Input`}
             placeholder={ind !== undefined ? inputNames[ind].placeholder : ""}
+            onChange={(e) =>
+              params.newMovie({
+                ...params.movie,
+                [`${
+                  ind !== undefined ? inputNames[ind].modelName : ""
+                }`]: `${e.target.value}`,
+              })
+            }
+            value={
+              params.movie[
+                `${
+                  ind !== undefined ? inputNames[ind].modelName : ""
+                }` as keyof NewVHSDetails
+              ] === 0
+                ? ""
+                : params.movie[
+                    `${
+                      ind !== undefined ? inputNames[ind].modelName : ""
+                    }` as keyof NewVHSDetails
+                  ]
+            }
           ></input>
         )}
 

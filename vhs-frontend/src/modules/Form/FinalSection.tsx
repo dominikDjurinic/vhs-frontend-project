@@ -1,11 +1,11 @@
 import { AddToCart } from "@/components/AddToCart";
 import { FavouriteBtn } from "@/components/FavouriteBtn";
-import { VHSDetails } from "@/model/vhs";
+import { NewVHSDetails, VHSDetails } from "@/model/vhs";
 import Image from "next/image";
 import styles from "@/styles/details.module.css";
 import Link from "next/link";
 
-export function FinalSection() {
+export function FinalSection(params: { movie: NewVHSDetails }) {
   return (
     <>
       <div className={styles.detailsContainer}>
@@ -19,39 +19,55 @@ export function FinalSection() {
         <div className={styles.detailsDiv}>
           <div className={styles.detailsInfo}>
             <div>
-              <p className={styles.vhsTitle}></p>
+              <p className={styles.vhsTitle}>
+                {params.movie.title === "" ? "-" : params.movie.title}
+              </p>
 
               <p>
-                Category: <span className={styles.vhsCategory}></span>
+                Category:{" "}
+                <span className={styles.vhsCategory}>
+                  {params.movie.genre === "" ? "-" : params.movie.genre}
+                </span>
               </p>
               <p>
-                Released: <span className="boldText"></span>
+                Released:{" "}
+                <span className="boldText">{params.movie.releasedAt}</span>
               </p>
               <p>
-                Duration: <span className="boldText"></span> min
+                Duration:{" "}
+                <span className="boldText">{params.movie.duration}</span> min
               </p>
             </div>
             <div className={styles.detailsRentalDiv}>
               <AddToCart />
               <p>
-                <span className={styles.vhsPrice}></span> €/day
+                <span className={styles.vhsPrice}>
+                  {params.movie.rentalPrice}
+                </span>{" "}
+                €/day
               </p>
               <p>
-                Rental duration: <span className="boldText"></span> days
+                Rental duration:{" "}
+                <span className="boldText">{params.movie.rentalDuration}</span>{" "}
+                days
               </p>
               <p
                 className={`${
                   1 > 0 ? styles.availableP : styles.notAvailableP
                 }`}
               >
-                <span className="boldText"></span> Available
+                <span className="boldText">?</span> Available
               </p>
             </div>
           </div>
           <div className={styles.descriptionContainer}>
             <p>Description:</p>
             <div className={styles.descriptionDiv}>
-              <p></p>
+              <p>
+                {params.movie.description === ""
+                  ? "-"
+                  : params.movie.description}
+              </p>
             </div>
           </div>
         </div>

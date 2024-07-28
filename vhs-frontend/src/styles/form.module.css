@@ -6,6 +6,14 @@
     align-items: center;
 }
 
+.mainDivEdit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+}
+
 .formContainer{
     width: 80%;
     height: 100%;
@@ -19,10 +27,32 @@
     gap: 100px;
 }
 
+.form2Container{
+    width: 80%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 2px gray);
+    background-color: white;
+    gap: 100px;
+    padding: 30px;
+}
+
 .inputContainer{
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.imageAboutDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .inputDiv{
@@ -111,7 +141,7 @@
     visibility: hidden;
 }
 .btnPrev:hover{
-    background-color: var(--light-gray-background);
+    background-color: var(--hover-gray);
 }
 
 .visiblePrev{
@@ -152,6 +182,13 @@
     cursor: pointer;
 }
 
+.editMovieTitleDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
 .navBtn{
     display: flex;
     justify-content: start;
@@ -163,4 +200,28 @@
     position: absolute;
     top: 105px;
     left: 20px;
+}
+
+.btnSaveContainer{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.btnDeleteContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0px;
+}
+
+.btnDelete{
+    background-color: var(--red-color);
+    color: white;
+    width: 250px;
+}
+
+.btnDelete:hover{
+    background-color: var(--hover-red);
 }
