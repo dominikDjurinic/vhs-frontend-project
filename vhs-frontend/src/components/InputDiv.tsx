@@ -9,7 +9,7 @@ export function InputDiv(params: {
   newMovie: (newMovie: NewVHSDetails) => void;
   movie: NewVHSDetails;
 }) {
-  const [ind, setInd] = useState<number | undefined>(undefined);
+  const [ind, setInd] = useState<number | undefined>(0);
   //const [modelName, setModelName] = useState<string>(""); //input name - property of NewVHSDetails object
 
   useEffect(() => {
