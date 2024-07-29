@@ -10,13 +10,11 @@ export function InputDiv(params: {
   movie: NewVHSDetails;
 }) {
   const [ind, setInd] = useState<number | undefined>(0);
-  //const [modelName, setModelName] = useState<string>(""); //input name - property of NewVHSDetails object
 
   useEffect(() => {
     //finding input names
     const index = inputNames.findIndex(({ name }) => name === params.name);
     setInd(index);
-    //setModelName(inputNames[index].modelName);
   }, [params.name]);
 
   return (

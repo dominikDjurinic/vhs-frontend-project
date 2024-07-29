@@ -11,8 +11,8 @@ async function bootstrap() {
   app.useStaticAssets(join(__dirname, '..', 'public'), { prefix: '/public/' });
 
   app.enableCors({
-    origin: '*',
-  });
+	origin: '*',
+});
 
   const config = new DocumentBuilder()
     .setTitle('True North VHS API')

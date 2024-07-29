@@ -1,4 +1,5 @@
 "use client";
+import { getVhsById } from "@/api/getVhsById";
 import { InputDiv } from "@/components/InputDiv";
 import { NewVHSDetails, VHSDetails } from "@/model/vhs";
 import { AlertMsg } from "@/modules/AlertMsg";
@@ -21,21 +22,14 @@ export default function EditMovie({ params }: { params: { movieId: number } }) {
     rentalPrice: 0,
     rentalDuration: 0,
   });
+  const [quantity, setQuantity] = useState<number>(0);
 
   useEffect(() => {
-    const movieWithId = async () => {
-      const response = await fetch(
-        `http://localhost:3000/api/vhs/${params.movieId}`,
-        {
-          method: "GET",
-        }
-      );
-
-      const details: VHSDetails = await response.json();
-
-      setMovie(details);
-    };
-    movieWithId();
+    /**GET VHS movie by id from database**/
+    getVhsById(params.movieId).then((data) => {
+      setMovie(data);
+      setQuantity(data.quantity);
+    });
   }, [params.movieId]);
 
   return (
@@ -46,6 +40,8 @@ export default function EditMovie({ params }: { params: { movieId: number } }) {
           typeMsg={`${typeMsg}`}
           end={(end) => setEnd(end)}
           newMovie={movie}
+          movieId={params.movieId}
+          quantity={quantity}
         />
       ) : null}
       <Link href={`/details/${params.movieId}`} className={styles.closeNavBtn}>
@@ -115,6 +111,22 @@ export default function EditMovie({ params }: { params: { movieId: number } }) {
               newMovie={(movie) => setMovie(movie)}
               movie={movie}
             />
+            <div className={styles.inputDiv}>
+              <label htmlFor={`quantityInput`}>Quantity</label>
+              <div className={styles.inputWithAddition}>
+                <input
+                  className={styles.inputBox}
+                  id={`quantityInput`}
+                  name={`quantityInput`}
+                  placeholder={"Quantity of available movies"}
+                  onChange={(e) => {
+                    setQuantity(Number(e.target.value));
+                  }}
+                  value={quantity}
+                ></input>
+                <p>pieces</p>
+              </div>
+            </div>
           </div>
           <div className={styles.btnSaveContainer}>
             <button

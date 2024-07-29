@@ -1,3 +1,4 @@
+"use client";
 import { VHSDetails } from "@/model/vhs";
 import { Footer } from "@/modules/Footer";
 import { Header } from "@/modules/Header";
@@ -5,16 +6,19 @@ import { VHSCollection } from "@/modules/VHSCollection";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/catalogue.module.css";
+import { useEffect, useState } from "react";
+import { headers } from "next/headers";
+import { getAllVhs } from "@/api/getAllVhs";
 
-export default async function Catalogue() {
-  /**GET all VHS movies from database**/
-  const response = await fetch(`http://localhost:3000/api/vhs`, {
-    method: "GET",
-  });
+export default function Catalogue() {
+  const [vhs, setVhs] = useState<VHSDetails[] | undefined>();
 
-  const details: VHSDetails[] = await response.json();
-
-  const vhs: VHSDetails[] = details;
+  useEffect(() => {
+    /**GET all VHS movies from database**/
+    getAllVhs().then((data) => {
+      setVhs(data);
+    });
+  }, []);
 
   return (
     <>

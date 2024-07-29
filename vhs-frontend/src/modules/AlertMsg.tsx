@@ -1,4 +1,7 @@
 "use client";
+import { addNewMovie } from "@/api/addNewMovie";
+import { deleteVhs } from "@/api/deleteVhs";
+import { editMovie } from "@/api/editMovie";
 import { alertMsgsText } from "@/model/alertMsgs";
 import { NewVHSDetails } from "@/model/vhs";
 import { useEffect, useState } from "react";
@@ -6,7 +9,9 @@ import { useEffect, useState } from "react";
 export function AlertMsg(params: {
   typeMsg: string;
   end: (end: boolean) => void;
-  newMovie?: NewVHSDetails;
+  newMovie: NewVHSDetails;
+  movieId?: number;
+  quantity?: number;
 }) {
   const [index, setIndex] = useState<number | undefined>(undefined); //index of correct alert message
 
@@ -17,22 +22,13 @@ export function AlertMsg(params: {
 
   const chooseMethod = () => {
     if (params.typeMsg === "Add") {
-      addNewMovie();
+      addNewMovie(params.newMovie);
+    } else if (params.typeMsg === "Delete") {
+      if (params.movieId !== undefined) deleteVhs(params.movieId);
+    } else {
+      if (params.movieId !== undefined && params.quantity !== undefined)
+        editMovie(params.newMovie, params.movieId, params.quantity);
     }
-  };
-
-  const addNewMovie = async () => {
-    const response = await fetch(`http://localhost:3000/api/vhs`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-        "Access-Control-Allow-Origin": "http://localhost:8080",
-      },
-      body: JSON.stringify(params.newMovie),
-    });
-
-    const resp = await response.json();
-    alert(JSON.stringify(resp));
   };
 
   return (
