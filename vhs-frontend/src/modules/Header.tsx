@@ -17,7 +17,6 @@ export function Header(params: { selectedNav: string }) {
             height={210}
           ></Image>
         </Link>
-
         <SearchBar isSmall={true} />
       </div>
       <div className={styles.navDiv}>

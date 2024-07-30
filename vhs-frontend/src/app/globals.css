@@ -24,6 +24,13 @@ a {
   text-decoration: none;
 }
 
+.searchDiv{
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
 .searchBar{
   width: 550px;
   padding: 20px 30px;
@@ -192,4 +199,51 @@ a {
 .btnSave{
   background-color: var(--yellow-background);
   color: white;
+}
+
+.searchItemDiv{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  background-color: var(--light-yellow-background);
+  cursor: pointer;
+}
+
+.searchItemDiv:hover{
+  background-color: var(--hover-yellow);
+}
+
+.searchResultsDiv{
+  position: absolute;
+  top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--light-yellow-background);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.searchResultDivHome{
+  position: absolute;
+  top: 130px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--light-yellow-background);
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 4;
+}
+
+.searchItemDiv > p{
+  padding-left: 20px;
+  text-transform: capitalize;
+}
+
+.searchTitle{
+  font-weight: bold;
 }
