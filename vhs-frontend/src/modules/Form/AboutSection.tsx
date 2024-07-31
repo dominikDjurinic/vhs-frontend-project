@@ -2,22 +2,26 @@ import { InputDiv } from "@/components/InputDiv";
 import { NewVHSDetails } from "@/model/vhs";
 import styles from "@/styles/form.module.css";
 import Image from "next/image";
+import { useState } from "react";
 
 export function AboutSection(params: {
   newMovie: (newMovie: NewVHSDetails) => void;
   movie: NewVHSDetails;
+  movieImage: (movieImg: File) => void;
 }) {
+  const [image, setImage] = useState<string>();
+
   return (
     <div className={styles.formContainer}>
       <div className={styles.addImageDiv}>
-        <Image
-          id={styles.logoImg}
-          src={"/logoNoText.png"}
-          alt="duck logo icon"
-          width={200}
-          height={200}
-        ></Image>
         <p>Add movie thumbnail</p>
+        <input
+          type="file"
+          onChange={(e) => {
+            if (e.target.files !== null && e.target.files[0] !== null)
+              params.movieImage(e.target.files[0]);
+          }}
+        ></input>
       </div>
 
       <div className={styles.inputContainer}>

@@ -24,10 +24,15 @@ export function VHSDetailsCell(params: { movieId: number }) {
         <div className={styles.detailsContainer}>
           <FavouriteBtn />
           <Image
-            src={"/logoNoText.png"}
-            alt="duck logo icon"
-            width={250}
-            height={200}
+            className="duckPlaceholder"
+            src={
+              vhs.thumbnail !== null
+                ? `http://localhost:3000/${vhs.thumbnail}`
+                : "/logoNotext.png"
+            }
+            alt="title logo duck"
+            width={300}
+            height={300}
           ></Image>
           <div className={styles.detailsDiv}>
             <div className={styles.detailsInfo}>

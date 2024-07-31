@@ -27,6 +27,7 @@ export default function NewMovie() {
     rentalPrice: 0,
     rentalDuration: 0,
   });
+  const [movieImg, setMovieImg] = useState<File | undefined>();
 
   return (
     <>
@@ -37,6 +38,7 @@ export default function NewMovie() {
             typeMsg="Add"
             end={(end) => setEnd(end)}
             newMovie={newMovie}
+            movieImage={movieImg}
           />
         ) : null}
         <Link href={"/catalogue"} className={styles.closeNavBtn}>
@@ -61,6 +63,7 @@ export default function NewMovie() {
             <AboutSection
               newMovie={(newMovie) => setNewMovie(newMovie)}
               movie={newMovie}
+              movieImage={(movieImg) => setMovieImg(movieImg)}
             />
           ) : null}
           {step === 1 ? (
@@ -75,7 +78,9 @@ export default function NewMovie() {
               movie={newMovie}
             />
           ) : null}
-          {step === 3 ? <FinalSection movie={newMovie} /> : null}
+          {step === 3 ? (
+            <FinalSection movie={newMovie} movieImg={movieImg} />
+          ) : null}
         </div>
         <div className={styles.btnContainer}>
           <div className={styles.btnDiv}>
@@ -110,7 +115,9 @@ export default function NewMovie() {
             {step === 3 ? (
               <button
                 className={`${styles.btnNext} ${styles.btn}`}
-                onClick={() => setEnd(true)}
+                onClick={() => {
+                  setEnd(true);
+                }}
               >
                 Submit
               </button>

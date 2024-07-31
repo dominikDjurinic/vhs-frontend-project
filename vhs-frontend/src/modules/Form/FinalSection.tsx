@@ -5,15 +5,23 @@ import Image from "next/image";
 import styles from "@/styles/details.module.css";
 import Link from "next/link";
 
-export function FinalSection(params: { movie: NewVHSDetails }) {
+export function FinalSection(params: {
+  movie: NewVHSDetails;
+  movieImg: File | undefined;
+}) {
   return (
     <>
       <div className={styles.detailsContainer}>
         <FavouriteBtn />
         <Image
-          src={"/logoNoText.png"}
-          alt="duck logo icon"
-          width={250}
+          className="duckPlaceholder"
+          src={
+            params.movieImg !== undefined && params.movieImg !== null
+              ? URL.createObjectURL(params.movieImg)
+              : "/logoNotext.png"
+          }
+          alt="title logo duck"
+          width={200}
           height={200}
         ></Image>
         <div className={styles.detailsDiv}>

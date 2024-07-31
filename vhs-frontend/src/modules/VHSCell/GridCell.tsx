@@ -13,7 +13,11 @@ export function VHSGridCell(params: { vhs: VHSDetails }) {
         <Link href={`/details/${params.vhs.id}`}>
           <Image
             className="duckPlaceholder"
-            src={"/logoNotext.png"}
+            src={
+              params.vhs.thumbnail !== null
+                ? `http://localhost:3000/${params.vhs.thumbnail}`
+                : "/logoNotext.png"
+            }
             alt="title logo duck"
             width={200}
             height={200}

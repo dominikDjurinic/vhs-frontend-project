@@ -22,13 +22,12 @@ export default function EditMovie({ params }: { params: { movieId: number } }) {
     rentalPrice: 0,
     rentalDuration: 0,
   });
-  const [quantity, setQuantity] = useState<number>(0);
+  const [movieImg, setMovieImg] = useState<File | undefined>();
 
   useEffect(() => {
     /**GET VHS movie by id from database**/
     getVhsById(params.movieId).then((data) => {
       setMovie(data);
-      setQuantity(data.quantity);
     });
   }, [params.movieId]);
 
@@ -41,7 +40,7 @@ export default function EditMovie({ params }: { params: { movieId: number } }) {
           end={(end) => setEnd(end)}
           newMovie={movie}
           movieId={params.movieId}
-          quantity={quantity}
+          movieImage={movieImg}
         />
       ) : null}
       <Link href={`/details/${params.movieId}`} className={styles.closeNavBtn}>
@@ -62,14 +61,14 @@ export default function EditMovie({ params }: { params: { movieId: number } }) {
         <div className={styles.form2Container}>
           <div className={styles.imageAboutDiv}>
             <div className={styles.addImageDiv}>
-              <Image
-                id={styles.logoImg}
-                src={"/logoNoText.png"}
-                alt="duck logo icon"
-                width={200}
-                height={200}
-              ></Image>
               <p>Add movie thumbnail</p>
+              <input
+                type="file"
+                onChange={(e) => {
+                  if (e.target.files !== null && e.target.files[0] !== null)
+                    setMovieImg(e.target.files[0]);
+                }}
+              ></input>
             </div>
             <div className={styles.inputContainer}>
               <InputDiv
@@ -111,22 +110,6 @@ export default function EditMovie({ params }: { params: { movieId: number } }) {
               newMovie={(movie) => setMovie(movie)}
               movie={movie}
             />
-            <div className={styles.inputDiv}>
-              <label htmlFor={`quantityInput`}>Quantity</label>
-              <div className={styles.inputWithAddition}>
-                <input
-                  className={styles.inputBox}
-                  id={`quantityInput`}
-                  name={`quantityInput`}
-                  placeholder={"Quantity of available movies"}
-                  onChange={(e) => {
-                    setQuantity(Number(e.target.value));
-                  }}
-                  value={quantity}
-                ></input>
-                <p>pieces</p>
-              </div>
-            </div>
           </div>
           <div className={styles.btnSaveContainer}>
             <button

@@ -29,14 +29,14 @@ export function InputDiv(params: {
             id={`${params.name}Input`}
             name={`${params.name}Input`}
             placeholder={ind !== undefined ? inputNames[ind].placeholder : ""}
-            onChange={(e) =>
+            onChange={(e) => {
               params.newMovie({
                 ...params.movie,
                 [`${
                   ind !== undefined ? inputNames[ind].modelName : ""
                 }`]: `${e.target.value}`,
-              })
-            }
+              });
+            }}
             value={
               params.movie[
                 `${

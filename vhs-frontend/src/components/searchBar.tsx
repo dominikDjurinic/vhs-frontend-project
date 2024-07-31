@@ -24,7 +24,7 @@ export function SearchBar(props: { isSmall: boolean }) {
         setSearchedVhs((searchedVhs) => [...searchedVhs, data]);
       }
     });
-  }, [searchString]);
+  }, [searchString, vhs]);
 
   return (
     <div className="searchDiv">
