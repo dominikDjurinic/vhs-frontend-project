@@ -1,6 +1,6 @@
 export const headerNavigation = [
-  "Catalogue",
-  "Categories",
-  "Favourites",
-  "Cart",
+  { name: "Catalogue", image: "" },
+  { name: "Categories", image: "" },
+  { name: "Favourites", image: "/fav.png" },
+  { name: "Cart", image: "/cart.png" },
 ];

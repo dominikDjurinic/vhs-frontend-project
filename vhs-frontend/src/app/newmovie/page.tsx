@@ -1,5 +1,5 @@
 "use client";
-import { NewVHSDetails } from "@/model/vhs";
+import { NewVHSDetails, VHSDetails } from "@/model/vhs";
 import { AlertMsg } from "@/modules/AlertMsg";
 import { Footer } from "@/modules/Footer";
 import { AboutSection } from "@/modules/Form/AboutSection";
@@ -18,7 +18,8 @@ export default function NewMovie() {
 
   const [step, setStep] = useState(0); //new movie form step counter
   const [end, setEnd] = useState(false); //after submitting form show alert message
-  const [newMovie, setNewMovie] = useState<NewVHSDetails>({
+  const [newMovie, setNewMovie] = useState<VHSDetails>({
+    id: 0,
     title: "",
     description: "",
     genre: "",
@@ -26,21 +27,24 @@ export default function NewMovie() {
     releasedAt: 0,
     rentalPrice: 0,
     rentalDuration: 0,
+    quantity: 0,
+    thumbnail: "",
   });
   const [movieImg, setMovieImg] = useState<File | undefined>();
 
   return (
     <>
+      <Header selectedNav="" />
+
+      {end ? (
+        <AlertMsg
+          typeMsg="Add"
+          end={(end) => setEnd(end)}
+          newMovie={newMovie}
+          movieImage={movieImg}
+        />
+      ) : null}
       <div className="wrapper">
-        <Header selectedNav="" />
-        {end ? (
-          <AlertMsg
-            typeMsg="Add"
-            end={(end) => setEnd(end)}
-            newMovie={newMovie}
-            movieImage={movieImg}
-          />
-        ) : null}
         <Link href={"/catalogue"} className={styles.closeNavBtn}>
           <div className={styles.navBtn}>
             <Image
@@ -124,9 +128,8 @@ export default function NewMovie() {
             ) : null}
           </div>
         </div>
-
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }

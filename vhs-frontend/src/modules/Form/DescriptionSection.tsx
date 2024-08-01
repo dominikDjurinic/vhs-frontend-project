@@ -1,11 +1,11 @@
 import { InputDiv } from "@/components/InputDiv";
-import { NewVHSDetails } from "@/model/vhs";
+import { NewVHSDetails, VHSDetails } from "@/model/vhs";
 import styles from "@/styles/form.module.css";
 import Image from "next/image";
 
 export function DescriptionSection(params: {
-  newMovie: (newMovie: NewVHSDetails) => void;
-  movie: NewVHSDetails;
+  newMovie: (newMovie: VHSDetails) => void;
+  movie: VHSDetails;
 }) {
   return (
     <div className={styles.formContainer}>

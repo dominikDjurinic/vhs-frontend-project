@@ -9,11 +9,11 @@
     align-items: center;
     justify-content: space-between;
     background-color: var(--yellow-background);
-    padding: 10px 0px;
     filter: drop-shadow(0px 2px 2px gray);
     position: sticky;
     top: 0px;
     z-index: 4;
+    height: 90px;
 }
 
 .searchLogo{
@@ -28,9 +28,31 @@
     font-weight: bold;
     padding: 0px 30px;
     cursor: pointer;
+    height: 100%;
+    align-items: center;
+}
+
+.navDiv > a{
+    height: 100%;
 }
 
 .selectedNav{
     color: var(--light-yellow-background);
-    text-decoration: underline;
+    text-shadow: 1px 1px gray;
+}
+
+.selectedNavLine{
+    border-bottom: 4px solid var(--light-yellow-background);
+}
+
+.navPlusLogo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 95%;
+    padding: 0px 3px;
+}
+
+.navPlusLogo > p{
+    padding: 0px 5px;
 }

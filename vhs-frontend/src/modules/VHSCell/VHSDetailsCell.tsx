@@ -22,9 +22,9 @@ export function VHSDetailsCell(params: { movieId: number }) {
     <>
       {vhs !== undefined ? (
         <div className={styles.detailsContainer}>
-          <FavouriteBtn />
+          <FavouriteBtn vhs={vhs} />
           <Image
-            className="duckPlaceholder"
+            className="duckPlaceholderDetails"
             src={
               vhs.thumbnail !== null
                 ? `http://localhost:3000/${vhs.thumbnail}`

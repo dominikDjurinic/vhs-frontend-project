@@ -4,13 +4,13 @@ import { deleteVhs } from "@/api/deleteVhs";
 import { editMovie } from "@/api/editMovie";
 import { alertMsgsText } from "@/model/alertMsgs";
 import { inputNames } from "@/model/inputNames";
-import { NewVHSDetails } from "@/model/vhs";
+import { NewVHSDetails, VHSDetails } from "@/model/vhs";
 import { useEffect, useState } from "react";
 
 export function AlertMsg(params: {
   typeMsg: string;
   end: (end: boolean) => void;
-  newMovie: NewVHSDetails;
+  newMovie: VHSDetails | undefined;
   movieId?: number;
   movieImage: File | undefined;
 }) {
@@ -29,7 +29,7 @@ export function AlertMsg(params: {
         formData.append(
           inputNames[i].modelName,
           params.newMovie[
-            `${inputNames[i].modelName}` as keyof NewVHSDetails
+            `${inputNames[i].modelName}` as keyof VHSDetails
           ].toString()
         );
       }

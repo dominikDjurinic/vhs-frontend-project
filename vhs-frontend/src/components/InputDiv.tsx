@@ -2,12 +2,12 @@
 import styles from "@/styles/form.module.css";
 import { inputNames } from "@/model/inputNames";
 import { useEffect, useState } from "react";
-import { NewVHSDetails } from "@/model/vhs";
+import { NewVHSDetails, VHSDetails } from "@/model/vhs";
 
 export function InputDiv(params: {
   name: string;
-  newMovie: (newMovie: NewVHSDetails) => void;
-  movie: NewVHSDetails;
+  newMovie: (newMovie: VHSDetails) => void;
+  movie: VHSDetails;
 }) {
   const [ind, setInd] = useState<number | undefined>(0);
 

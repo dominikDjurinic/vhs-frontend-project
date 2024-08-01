@@ -6,8 +6,8 @@
 }
 
 .detailsContainer{
-    min-height: 50vh;
-    width: 80%;
+    height: 500px;
+    width: 70%;
     position: relative;
     display: flex;
     align-items: center;
@@ -15,10 +15,11 @@
     filter: drop-shadow(0px 2px 2px gray);
     background-color: white;
     gap: 50px;
+    
 }
 
 .detailsContainer > img{
-    padding: 0px 80px;
+    padding: 20px 80px;
 }
 
 .detailsDiv{
@@ -86,9 +87,7 @@
 }
 
 .backNavBtn{
-    position: absolute;
-    top: 105px;
-    left: 20px;
+    padding: 10px 20px;
 }
 
 .editNavBtn{

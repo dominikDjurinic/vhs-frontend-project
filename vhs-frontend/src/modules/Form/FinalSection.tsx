@@ -12,7 +12,6 @@ export function FinalSection(params: {
   return (
     <>
       <div className={styles.detailsContainer}>
-        <FavouriteBtn />
         <Image
           className="duckPlaceholder"
           src={

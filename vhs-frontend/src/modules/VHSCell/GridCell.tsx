@@ -9,7 +9,7 @@ export function VHSGridCell(params: { vhs: VHSDetails }) {
   return (
     <>
       <div className={styles.gridCell}>
-        <FavouriteBtn />
+        <FavouriteBtn vhs={params.vhs} />
         <Link href={`/details/${params.vhs.id}`}>
           <Image
             className="duckPlaceholder"
@@ -19,8 +19,8 @@ export function VHSGridCell(params: { vhs: VHSDetails }) {
                 : "/logoNotext.png"
             }
             alt="title logo duck"
-            width={200}
-            height={200}
+            width={150}
+            height={150}
           ></Image>
         </Link>
         <Link href={`/details/${params.vhs.id}`}>

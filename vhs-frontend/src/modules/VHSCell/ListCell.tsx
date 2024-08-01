@@ -9,20 +9,22 @@ export function VHSListCell(params: { vhs: VHSDetails }) {
   return (
     <>
       <div className={styles.listCell}>
-        <FavouriteBtn />
-        <Link href={`/details/${params.vhs.id}`}>
-          <Image
-            className="duckPlaceholder"
-            src={
-              params.vhs.thumbnail !== null
-                ? `http://localhost:3000/${params.vhs.thumbnail}`
-                : "/logoNotext.png"
-            }
-            alt="title logo duck"
-            width={200}
-            height={200}
-          ></Image>
-        </Link>
+        <FavouriteBtn vhs={params.vhs} />
+        <div className={styles.imageDiv}>
+          <Link href={`/details/${params.vhs.id}`}>
+            <Image
+              className="duckPlaceholder"
+              src={
+                params.vhs.thumbnail !== null
+                  ? `http://localhost:3000/${params.vhs.thumbnail}`
+                  : "/logoNotext.png"
+              }
+              alt="title logo duck"
+              width={150}
+              height={150}
+            ></Image>
+          </Link>
+        </div>
         <div className={styles.listCellContainer}>
           <div className={styles.listCellInfo}>
             <Link href={`/details/${params.vhs.id}`}>

@@ -6,6 +6,7 @@
     background-color: var(--light-yellow-background);
     gap: 20px;
     padding: 10px 0px;
+    height: 80px;
 }
 
 #homeLogo{

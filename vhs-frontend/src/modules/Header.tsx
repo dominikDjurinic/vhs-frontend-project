@@ -21,14 +21,28 @@ export function Header(params: { selectedNav: string }) {
       </div>
       <div className={styles.navDiv}>
         {headerNavigation.map((nav) => (
-          <Link href={`/${nav.toLowerCase()}`} key={nav}>
-            <p
-              className={`${
-                params.selectedNav === nav ? styles.selectedNav : ""
+          <Link href={`/${nav.name.toLowerCase()}`} key={nav.name}>
+            <div
+              className={`${styles.navPlusLogo} ${
+                params.selectedNav === nav.name ? styles.selectedNavLine : ""
               }`}
             >
-              {nav}
-            </p>
+              {nav.image !== "" ? (
+                <Image
+                  src={nav.image}
+                  width={nav.name === "Cart" ? 20 : 24}
+                  height={nav.name === "Cart" ? 20 : 24}
+                  alt="nav logo"
+                ></Image>
+              ) : null}
+              <p
+                className={`${
+                  params.selectedNav === nav.name ? styles.selectedNav : ""
+                }`}
+              >
+                {nav.name}
+              </p>
+            </div>
           </Link>
         ))}
       </div>
