@@ -12,6 +12,7 @@ async function bootstrap() {
 
   app.enableCors({
     origin: '*',
+    methods: 'GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH',
   });
 
   const config = new DocumentBuilder()
