@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SearchItem } from "./SearchItem";
 
-export function SearchBar(props: { isSmall: boolean }) {
+export function SearchBar(params: { isSmall: boolean }) {
   const [vhs, setVhs] = useState<VHSDetails[] | undefined>();
   const [searchedVhs, setSearchedVhs] = useState<VHSDetails[]>([]);
   const [searchString, setSearchString] = useState<string>("");
@@ -28,7 +28,7 @@ export function SearchBar(props: { isSmall: boolean }) {
 
   return (
     <div className="searchDiv">
-      <div className={`${props.isSmall ? "searchBarSmall" : "searchBar"}`}>
+      <div className={`${params.isSmall ? "searchBarSmall" : "searchBar"}`}>
         <input
           placeholder="Search by movie title ..."
           onChange={(e) => {
@@ -45,7 +45,7 @@ export function SearchBar(props: { isSmall: boolean }) {
       {searchString !== "" ? (
         <div
           className={`${
-            props.isSmall ? "searchResultsDiv" : "searchResultDivHome"
+            params.isSmall ? "searchResultsDiv" : "searchResultDivHome"
           }`}
         >
           {searchedVhs?.length === 0 ? (

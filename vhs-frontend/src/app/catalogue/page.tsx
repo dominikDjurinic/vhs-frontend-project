@@ -9,6 +9,7 @@ import styles from "@/styles/catalogue.module.css";
 import { useEffect, useState } from "react";
 import { headers } from "next/headers";
 import { getAllVhs } from "@/api/getAllVhs";
+import { useWindowSizeContext } from "@/context/WindowSizeContext";
 
 export default function Catalogue() {
   const [vhs, setVhs] = useState<VHSDetails[] | undefined>();
@@ -20,11 +21,13 @@ export default function Catalogue() {
     });
   }, []);
 
+  const { mobileWindowSize } = useWindowSizeContext();
+
   return (
     <>
       <Header selectedNav="Catalogue" />
       <div className="wrapper">
-        <Link href={"/newmovie"}>
+        <Link href={"/newmovie"} className={styles.btnAddLink}>
           <div className={styles.addNewMovieBtn}>
             <div className={styles.addNewMovieBtnIcon}>
               <Image
@@ -35,7 +38,6 @@ export default function Catalogue() {
                 height={18}
               ></Image>
             </div>
-            <p className={styles.addMovieMsg}>Add new movie</p>
           </div>
         </Link>
         {vhs === undefined ? (

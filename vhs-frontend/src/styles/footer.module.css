@@ -7,6 +7,17 @@
     gap: 20px;
     padding: 10px 0px;
     height: 80px;
+    text-align: center;
+    position: sticky;
+    z-index: 4;
+}
+
+@media screen and (max-width: 600px) {
+    .footerDiv{
+        height: fit-content;
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 #homeLogo{

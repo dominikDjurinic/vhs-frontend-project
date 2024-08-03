@@ -1,9 +1,11 @@
-
-
 .titleContainer{
-    width: 1000px;
+    width: 100%;
     display: flex;
     justify-content: start;
+}
+
+.titleContainer > p{
+    padding: 20px 20px;
 }
 
 .favContainer{
@@ -23,4 +25,13 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
+}
+
+.cellsGridContainer{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
 }

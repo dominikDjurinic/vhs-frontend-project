@@ -1,9 +1,11 @@
 "use client";
+import { useWindowSizeContext } from "@/context/WindowSizeContext";
 import { VHSDetails } from "@/model/vhs";
 import { VHSGridCell } from "@/modules/VHSCell/GridCell";
 import { VHSListCell } from "@/modules/VHSCell/ListCell";
 import styles from "@/styles/catalogue.module.css";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function VHSCollection(params: { vhs: VHSDetails[] | undefined }) {
@@ -20,8 +22,10 @@ export function VHSCollection(params: { vhs: VHSDetails[] | undefined }) {
     }
   }, []);
 
+  const { mobileWindowSize } = useWindowSizeContext();
+
   return (
-    <>
+    <div>
       {params.vhs !== undefined ? (
         <div className={styles.catalogueContainer}>
           <div className={styles.catalogueInfoContainer}>
@@ -29,32 +33,34 @@ export function VHSCollection(params: { vhs: VHSDetails[] | undefined }) {
               Number of movies:{" "}
               <span className="boldText">{params.vhs.length}</span>
             </p>
-            <div className={styles.gridListSwitch}>
-              <Image
-                className={styles.switchImg}
-                src={`${gridView ? "/gridNosel.png" : "/gridSel.png"}`}
-                alt="grid"
-                width={18}
-                height={18}
-                onClick={() => {
-                  setGridView(true);
-                  localStorage.setItem("gridView", "true"); //setting users preference
-                }}
-              ></Image>
-              <Image
-                className={styles.switchImg}
-                src={`${gridView ? "/listSel.png" : "/listNosel.png"}`}
-                alt="list"
-                width={18}
-                height={18}
-                onClick={() => {
-                  setGridView(false);
-                  localStorage.setItem("gridView", "false"); //setting users preference
-                }}
-              ></Image>
-            </div>
+            {mobileWindowSize ? null : (
+              <div className={styles.gridListSwitch}>
+                <Image
+                  className={styles.switchImg}
+                  src={`${gridView ? "/gridNosel.png" : "/gridSel.png"}`}
+                  alt="grid"
+                  width={18}
+                  height={18}
+                  onClick={() => {
+                    setGridView(true);
+                    localStorage.setItem("gridView", "true"); //setting users preference
+                  }}
+                ></Image>
+                <Image
+                  className={styles.switchImg}
+                  src={`${gridView ? "/listSel.png" : "/listNosel.png"}`}
+                  alt="list"
+                  width={18}
+                  height={18}
+                  onClick={() => {
+                    setGridView(false);
+                    localStorage.setItem("gridView", "false"); //setting users preference
+                  }}
+                ></Image>
+              </div>
+            )}
           </div>
-          {gridView ? (
+          {gridView || mobileWindowSize ? (
             <div className={styles.cellsGridContainer}>
               {params.vhs.map((tape) => (
                 <VHSGridCell key={tape.id} vhs={tape} />
@@ -69,6 +75,6 @@ export function VHSCollection(params: { vhs: VHSDetails[] | undefined }) {
           )}
         </div>
       ) : null}
-    </>
+    </div>
   );
 }

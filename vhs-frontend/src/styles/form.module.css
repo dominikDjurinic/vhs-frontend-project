@@ -25,7 +25,6 @@
     filter: drop-shadow(0px 2px 2px gray);
     background-color: white;
     gap: 100px;
-    flex-wrap: wrap;
 }
 
 .form2Container{
@@ -67,6 +66,7 @@
     font-size: 20px;
     font-weight: bold;
 }
+
 
 .inputBox{
     border-radius: 10px;
@@ -117,7 +117,7 @@
     align-items: center;
     justify-content: center ;
     gap: 10px;
-    width: 200px;
+    min-width: 200px;
     font-size: 20px;
     font-weight: bold;
     border: none;
@@ -162,6 +162,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 20px 0px;
 }
 
@@ -234,4 +235,73 @@
     border-radius: 10px;
     cursor: pointer;
     padding: 10px 5px;
+}
+
+@media screen and (max-width: 1300px) {
+    .formMainDiv{
+        height: fit-content;
+    }
+    
+    .formContainer{
+        width: 100%;
+        min-height: 700px;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 0px;
+        padding-bottom: 30px;
+        filter: none;
+    }
+
+    .btnDiv{
+        width: 95%;
+    }
+
+    .inputDiv > label{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .inputDiv >label >p{
+        margin: 0px;
+        font-weight: normal;
+        font-size: 16px;
+    }
+
+    .btn{
+        min-width: 70px;
+        height: 40px;
+    }
+
+    .btnSubmit{
+        width: 200px;
+    }
+
+    .inputBoxDescript{
+        height: 500px;
+        width: 100%;
+    }
+
+    .form2Container{
+        width: 100%;
+        border-radius: 0px;
+        gap: 20px;
+        filter: none;
+    }
+
+    .imageAboutDiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .inputContainer{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .inputBox{
+        width: 300px;
+    }
 }

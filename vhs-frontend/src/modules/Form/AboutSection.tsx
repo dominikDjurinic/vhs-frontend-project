@@ -1,5 +1,5 @@
 import { InputDiv } from "@/components/InputDiv";
-import { NewVHSDetails, VHSDetails } from "@/model/vhs";
+import { VHSDetails } from "@/model/vhs";
 import styles from "@/styles/form.module.css";
 import Image from "next/image";
 import { useState } from "react";

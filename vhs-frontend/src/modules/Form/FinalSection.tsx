@@ -46,13 +46,13 @@ export function FinalSection(params: {
               </p>
             </div>
             <div className={styles.detailsRentalDiv}>
-              <AddToCart />
               <p>
                 <span className={styles.vhsPrice}>
                   {params.movie.rentalPrice}
                 </span>{" "}
                 €/day
               </p>
+              <AddToCart />
               <p>
                 Rental duration:{" "}
                 <span className="boldText">{params.movie.rentalDuration}</span>{" "}

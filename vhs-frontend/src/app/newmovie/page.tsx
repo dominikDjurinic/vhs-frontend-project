@@ -1,4 +1,5 @@
 "use client";
+import { useWindowSizeContext } from "@/context/WindowSizeContext";
 import { NewVHSDetails, VHSDetails } from "@/model/vhs";
 import { AlertMsg } from "@/modules/AlertMsg";
 import { Footer } from "@/modules/Footer";
@@ -31,6 +32,8 @@ export default function NewMovie() {
     thumbnail: "",
   });
   const [movieImg, setMovieImg] = useState<File | undefined>();
+
+  const { mobileWindowSize } = useWindowSizeContext();
 
   return (
     <>
@@ -100,14 +103,14 @@ export default function NewMovie() {
                 width={15}
                 height={15}
               ></Image>{" "}
-              Previous
+              {mobileWindowSize ? "" : "Previous"}
             </button>
             {step < 3 ? (
               <button
                 className={`${styles.btnNext} ${styles.btn}`}
                 onClick={() => setStep(step + 1)}
               >
-                Next{" "}
+                {mobileWindowSize ? "" : "Next"}{" "}
                 <Image
                   src={"/fi-br-angle-right.png"}
                   alt="right icon"
@@ -118,7 +121,7 @@ export default function NewMovie() {
             ) : null}
             {step === 3 ? (
               <button
-                className={`${styles.btnNext} ${styles.btn}`}
+                className={`${styles.btnNext} ${styles.btn} ${styles.btnSubmit}`}
                 onClick={() => {
                   setEnd(true);
                 }}

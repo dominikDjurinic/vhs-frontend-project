@@ -7,6 +7,7 @@ import styles from "@/styles/details.module.css";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getVhsById } from "@/api/getVhsById";
+import { useWindowSizeContext } from "@/context/WindowSizeContext";
 
 export function VHSDetailsCell(params: { movieId: number }) {
   const [vhs, setVhs] = useState<VHSDetails | undefined>();
@@ -17,6 +18,8 @@ export function VHSDetailsCell(params: { movieId: number }) {
       setVhs(data);
     });
   }, []);
+
+  const { mobileWindowSize } = useWindowSizeContext();
 
   return (
     <>
@@ -35,10 +38,14 @@ export function VHSDetailsCell(params: { movieId: number }) {
             height={300}
           ></Image>
           <div className={styles.detailsDiv}>
+            {mobileWindowSize ? (
+              <p className={styles.vhsTitle}>{vhs.title}</p>
+            ) : null}
             <div className={styles.detailsInfo}>
               <div>
-                <p className={styles.vhsTitle}>{vhs.title}</p>
-
+                {mobileWindowSize ? null : (
+                  <p className={styles.vhsTitle}>{vhs.title}</p>
+                )}
                 <p>
                   Category:{" "}
                   <span className={styles.vhsCategory}>{vhs.genre}</span>
@@ -50,24 +57,28 @@ export function VHSDetailsCell(params: { movieId: number }) {
                   Duration: <span className="boldText">{vhs.duration}</span> min
                 </p>
               </div>
-              <div className={styles.detailsRentalDiv}>
-                <AddToCart />
-                <p>
-                  <span className={styles.vhsPrice}>{vhs.rentalPrice}</span>{" "}
-                  €/day
-                </p>
-                <p>
-                  Rental duration:{" "}
-                  <span className="boldText">{vhs.rentalDuration}</span> days
-                </p>
-                <p
-                  className={`${
-                    vhs.quantity > 0 ? styles.availableP : styles.notAvailableP
-                  }`}
-                >
-                  <span className="boldText">{vhs.quantity}</span> Available
-                </p>
-              </div>
+              {mobileWindowSize ? null : (
+                <div className={styles.detailsRentalDiv}>
+                  <AddToCart />
+                  <p>
+                    <span className={styles.vhsPrice}>{vhs.rentalPrice}</span>{" "}
+                    €/day
+                  </p>
+                  <p>
+                    Rental duration:{" "}
+                    <span className="boldText">{vhs.rentalDuration}</span> days
+                  </p>
+                  <p
+                    className={`${
+                      vhs.quantity > 0
+                        ? styles.availableP
+                        : styles.notAvailableP
+                    }`}
+                  >
+                    <span className="boldText">{vhs.quantity}</span> Available
+                  </p>
+                </div>
+              )}
             </div>
             <div className={styles.descriptionContainer}>
               <p>Description:</p>
@@ -76,6 +87,25 @@ export function VHSDetailsCell(params: { movieId: number }) {
               </div>
             </div>
           </div>
+          {mobileWindowSize ? (
+            <div className={styles.detailsRentalDiv}>
+              <p>
+                <span className={styles.vhsPrice}>{vhs.rentalPrice}</span> €/day
+              </p>
+              <AddToCart />
+              <p>
+                Rental duration:{" "}
+                <span className="boldText">{vhs.rentalDuration}</span> days
+              </p>
+              <p
+                className={`${
+                  vhs.quantity > 0 ? styles.availableP : styles.notAvailableP
+                }`}
+              >
+                <span className="boldText">{vhs.quantity}</span> Available
+              </p>
+            </div>
+          ) : null}
           <Link href={`/edit/${vhs.id}`} className={styles.editNavBtn}>
             <div className={styles.navBtn}>
               <Image

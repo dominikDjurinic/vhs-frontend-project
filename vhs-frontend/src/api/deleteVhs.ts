@@ -1,5 +1,4 @@
 "use server";
-import { VHSDetails } from "@/model/vhs";
 import { redirect } from "next/navigation";
 
 export async function deleteVhs(movieId: number) {

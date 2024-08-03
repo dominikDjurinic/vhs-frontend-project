@@ -3,6 +3,7 @@ import styles from "@/styles/form.module.css";
 import { inputNames } from "@/model/inputNames";
 import { useEffect, useState } from "react";
 import { NewVHSDetails, VHSDetails } from "@/model/vhs";
+import { useWindowSizeContext } from "@/context/WindowSizeContext";
 
 export function InputDiv(params: {
   name: string;
@@ -17,10 +18,15 @@ export function InputDiv(params: {
     setInd(index);
   }, [params.name]);
 
+  const { mobileWindowSize } = useWindowSizeContext();
+
   return (
     <div className={styles.inputDiv}>
       <label htmlFor={`${params.name}Input`}>
         {ind !== undefined ? inputNames[ind].name : ""}
+        {mobileWindowSize ? (
+          <p>{ind !== undefined ? inputNames[ind].add : null}</p>
+        ) : null}
       </label>
       <div className={styles.inputWithAddition}>
         {params.name === "Description" ? (
@@ -75,7 +81,9 @@ export function InputDiv(params: {
           ></input>
         )}
 
-        <p>{ind !== undefined ? inputNames[ind].add : null}</p>
+        {mobileWindowSize ? null : (
+          <p>{ind !== undefined ? inputNames[ind].add : null}</p>
+        )}
       </div>
     </div>
   );

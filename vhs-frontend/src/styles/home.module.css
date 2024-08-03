@@ -1,5 +1,5 @@
 .homeTitleContainer{
-  height: 50vh;
+  min-height: 50vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -98,5 +98,25 @@
 }
 
 .btnCatalogue:hover{
-  background-color: var(--light-gray-background);
+  background-color: var(--hover-yellow);
+}
+
+@media screen and (max-width: 800px) {
+  .homeTitleContainer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  .homeTitleText{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .textMsg{
+    padding: 0px 20px;
+  }
 }

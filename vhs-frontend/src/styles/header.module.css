@@ -16,6 +16,13 @@
     height: 90px;
 }
 
+.popUpMenu{
+    width: 100%;
+    position: fixed;
+    top: 90px;
+    z-index: 4;
+}
+
 .searchLogo{
     display: flex;
     align-items: center;
@@ -36,13 +43,67 @@
     height: 100%;
 }
 
+.navDiv > a:hover{
+    color: var(--light-yellow-background);
+}
+
+.navColumnDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--light-yellow-background);
+    font-weight: bold;
+    padding: 5px 0px;
+}
+
+.searchColumnDiv{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    background-color: var(--light-yellow-background);
+}
+
+.searchColumnDiv > a{
+    width: 100%;
+}
+
+.navColumnDiv:hover{
+    background-color: var(--yellow-background);
+}
+
+.searchBar{
+    padding: 10px 20px;
+    width: 80%;
+    background-color: var(--light-yellow-background);
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.searchBar > input{
+    width: 100%;
+    border: none;
+    background-color: inherit;
+    font-size: 16px;
+}
+
+.searchBar > input:focus{
+    outline: none;
+}
+
 .selectedNav{
     color: var(--light-yellow-background);
-    text-shadow: 1px 1px gray;
 }
 
 .selectedNavLine{
     border-bottom: 4px solid var(--light-yellow-background);
+}
+
+.selectedNavDiv{
+    background-color: var(--yellow-background);
 }
 
 .navPlusLogo{

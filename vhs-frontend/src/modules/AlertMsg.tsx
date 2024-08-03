@@ -2,6 +2,7 @@
 import { addNewMovie } from "@/api/addNewMovie";
 import { deleteVhs } from "@/api/deleteVhs";
 import { editMovie } from "@/api/editMovie";
+import { useWindowSizeContext } from "@/context/WindowSizeContext";
 import { alertMsgsText } from "@/model/alertMsgs";
 import { inputNames } from "@/model/inputNames";
 import { NewVHSDetails, VHSDetails } from "@/model/vhs";
@@ -21,6 +22,8 @@ export function AlertMsg(params: {
     let ind = alertMsgsText.findIndex(({ btn }) => btn === params.typeMsg); //finding correct alert message
     setIndex(ind);
   }, [params.typeMsg]);
+
+  const { mobileWindowSize } = useWindowSizeContext();
 
   const prepareData = () => {
     //setting data into FormData format
@@ -59,14 +62,14 @@ export function AlertMsg(params: {
         <div className="msgBox">
           <p>{index !== undefined ? alertMsgsText[index].text : null}</p>
           <div className="msgBtns">
-            <button className="btn" onClick={() => params.end(false)}>
-              Cancle
-            </button>
             <button
               className={`btn btn${params.typeMsg}`}
               onClick={prepareData}
             >
               {index !== undefined ? alertMsgsText[index].btn : null}
+            </button>
+            <button className="btn" onClick={() => params.end(false)}>
+              Cancle
             </button>
           </div>
         </div>
