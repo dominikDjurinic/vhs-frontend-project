@@ -1,6 +1,6 @@
 # Old Duck - VHS Rental Shop
 
-![logo.png](Logo.png)
+<img src="Logo.png" width="400">
 
 Old Duck is a web application created as part of a project for applying for a front-end position at True North.
 
@@ -8,7 +8,7 @@ Old Duck is a web application created as part of a project for applying for a fr
 
 The goal of the project is to show knowledge, skills and creativity in the creation of web application user interfaces using the example of the VHS Rental Shop.
 
-<br/>
+
 <br/>
 
 ## About the application
@@ -20,7 +20,7 @@ The application displays several pages: Home Page, Catalogue Page, Details Page,
 In the application, it is possible to view all VHS movies from the database, view movie details, create a new movie and add it to the database, edit an existing movie, delete a movie and set or delete favorites.
 
 <br/>
-<br/>
+
 
 ## Technologies
 
@@ -29,7 +29,7 @@ The technologies used in the creation of the application are **Next.js**, **Reac
 Figma was used in the design of the user interface ([Figma project - Old Duck](https://www.figma.com/design/PVE4leTmTi410m8adPMjGJ/Old-Duck---True-North?node-id=0-1&t=hSG708AQtZFB9xw7-1)).
 
 <br/>
-<br/>
+
 
 ## Screens
 
