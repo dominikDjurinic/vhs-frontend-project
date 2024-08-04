@@ -1,4 +1,5 @@
 export const inputNames = [
+  //array of names ad placeholders for labels and placeholders in input form
   { name: "Title", placeholder: "Movie title", add: "", modelName: "title" },
   { name: "Category", placeholder: "Movie genre", add: "", modelName: "genre" },
   {

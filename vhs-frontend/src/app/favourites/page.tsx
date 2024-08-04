@@ -2,7 +2,6 @@
 import { VHSDetails } from "@/model/vhs";
 import { Footer } from "@/modules/Footer";
 import { Header } from "@/modules/Header";
-import Image from "next/image";
 import styles from "@/styles/favourite.module.css";
 import { useEffect, useState } from "react";
 import { VHSListCell } from "@/modules/VHSCell/ListCell";
@@ -13,6 +12,7 @@ export default function Catalogue() {
   const [favVhs, setFavVhs] = useState<VHSDetails[] | undefined>();
 
   useEffect(() => {
+    //get favourites from localStorage
     const favourites = localStorage.getItem("favourites");
     if (favourites !== null) {
       setFavVhs(JSON.parse(favourites));

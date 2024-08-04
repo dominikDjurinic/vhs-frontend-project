@@ -6,6 +6,7 @@
   --dark-gray-background: #CDCDCD;
   --hover-gray: #E2E0E0;
   --green-color: #0F7F56;
+  --hover-green: #298F6A;
   --red-color: #DE0202;
   --hover-red: #E24141;
 }
@@ -195,14 +196,26 @@ a {
   color: white;
 }
 
+.btnAdd:hover{
+  background-color: var(--hover-green);
+}
+
 .btnDelete{
   background-color: var(--red-color);
   color: white;
 }
 
+.btnDelete:hover{
+  background-color: var(--hover-red);
+}
+
 .btnSave{
   background-color: var(--yellow-background);
   color: white;
+}
+
+.btnSave:hover{
+  background-color: var(--hover-yellow);
 }
 
 .searchItemDiv{

@@ -1,7 +1,7 @@
 "use client";
 import { getVhsById } from "@/api/getVhsById";
 import { InputDiv } from "@/components/InputDiv";
-import { NewVHSDetails, VHSDetails } from "@/model/vhs";
+import { VHSDetails } from "@/model/vhs";
 import { AlertMsg } from "@/modules/AlertMsg";
 import { Footer } from "@/modules/Footer";
 import { Header } from "@/modules/Header";
@@ -71,7 +71,9 @@ export default function EditMovie({ params }: { params: { movieId: number } }) {
                 <Image
                   className="duckPlaceholderDetails"
                   src={
-                    movie.thumbnail !== null && movieImg === undefined
+                    movie.thumbnail !== "" &&
+                    movie.thumbnail !== null &&
+                    movieImg === undefined
                       ? `http://localhost:3000/${movie.thumbnail}`
                       : movieImg !== undefined
                       ? URL.createObjectURL(movieImg)

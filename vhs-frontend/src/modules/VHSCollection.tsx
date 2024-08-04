@@ -5,14 +5,13 @@ import { VHSGridCell } from "@/modules/VHSCell/GridCell";
 import { VHSListCell } from "@/modules/VHSCell/ListCell";
 import styles from "@/styles/catalogue.module.css";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export function VHSCollection(params: { vhs: VHSDetails[] | undefined }) {
   const [gridView, setGridView] = useState(true); //grid/list view selection
 
   useEffect(() => {
-    //reading from users local storage grid/list view preference
+    //read from users local storage grid/list view preference
     let view = localStorage.getItem("gridView");
 
     if (view === "true") {

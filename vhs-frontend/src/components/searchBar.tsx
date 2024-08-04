@@ -18,6 +18,7 @@ export function SearchBar(params: { isSmall: boolean }) {
   }, []);
 
   useEffect(() => {
+    //find all vhs movie titles with partial or full name from user input in search bar
     setSearchedVhs([]);
     vhs?.map((data) => {
       if (data.title.toLowerCase().indexOf(searchString.toLowerCase()) !== -1) {

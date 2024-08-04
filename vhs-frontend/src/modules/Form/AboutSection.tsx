@@ -8,6 +8,7 @@ export function AboutSection(params: {
   newMovie: (newMovie: VHSDetails) => void;
   movie: VHSDetails;
   movieImage: (movieImg: File) => void;
+  image: File | undefined;
 }) {
   const [image, setImage] = useState<File>();
 
@@ -17,7 +18,11 @@ export function AboutSection(params: {
         <Image
           className="duckPlaceholderDetails"
           src={
-            image !== undefined ? URL.createObjectURL(image) : "/logoNoText.png"
+            params.image !== undefined
+              ? URL.createObjectURL(params.image)
+              : image !== undefined
+              ? URL.createObjectURL(image)
+              : "/logoNoText.png"
           }
           alt="preview image"
           width={150}

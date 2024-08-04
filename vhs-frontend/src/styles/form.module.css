@@ -279,7 +279,7 @@
 
     .inputBoxDescript{
         height: 500px;
-        width: 100%;
+        width: 500px;
     }
 
     .form2Container{
@@ -296,12 +296,26 @@
     }
 
     .inputContainer{
-        width: 80%;
+        width: fit-content;
+        align-items: center;
     }
+
+    .inputDiv{
+        width: fit-content;
+    }
+    .inputWithAddition{
+        width: fit-content;
+    }
+    
 }
 
 @media screen and (max-width: 600px) {
     .inputBox{
         width: 300px;
     }
+
+    .inputBoxDescript{
+        width: 300px;
+    }
+
 }

@@ -18,6 +18,7 @@ const WindowSizeContext = createContext<WindowSizeValues>(
   {} as WindowSizeValues
 );
 
+//global state - mobile or desktop version of web app
 export const WindowSizeContextProvider = ({ children }: PropsWithChildren) => {
   const [mobileWindowSize, setMobileWindowSize] = useState<boolean | undefined>(
     undefined
@@ -28,6 +29,7 @@ export const WindowSizeContextProvider = ({ children }: PropsWithChildren) => {
       setMobileWindowSize(window.innerWidth <= 1300);
     };
 
+    //listen for window resize and set state
     window.addEventListener("resize", handleResizeWindow);
 
     handleResizeWindow();

@@ -1,6 +1,6 @@
 "use client";
 import { useWindowSizeContext } from "@/context/WindowSizeContext";
-import { NewVHSDetails, VHSDetails } from "@/model/vhs";
+import { VHSDetails } from "@/model/vhs";
 import { AlertMsg } from "@/modules/AlertMsg";
 import { Footer } from "@/modules/Footer";
 import { AboutSection } from "@/modules/Form/AboutSection";
@@ -8,7 +8,6 @@ import { DescriptionSection } from "@/modules/Form/DescriptionSection";
 import { FinalSection } from "@/modules/Form/FinalSection";
 import { RentSection } from "@/modules/Form/RentSection";
 import { Header } from "@/modules/Header";
-import { VHSDetailsCell } from "@/modules/VHSCell/VHSDetailsCell";
 import styles from "@/styles/form.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -71,6 +70,7 @@ export default function NewMovie() {
               newMovie={(newMovie) => setNewMovie(newMovie)}
               movie={newMovie}
               movieImage={(movieImg) => setMovieImg(movieImg)}
+              image={movieImg}
             />
           ) : null}
           {step === 1 ? (

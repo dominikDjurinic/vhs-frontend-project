@@ -2,7 +2,7 @@
 import styles from "@/styles/form.module.css";
 import { inputNames } from "@/model/inputNames";
 import { useEffect, useState } from "react";
-import { NewVHSDetails, VHSDetails } from "@/model/vhs";
+import { VHSDetails } from "@/model/vhs";
 import { useWindowSizeContext } from "@/context/WindowSizeContext";
 
 export function InputDiv(params: {
@@ -13,7 +13,7 @@ export function InputDiv(params: {
   const [ind, setInd] = useState<number | undefined>(0);
 
   useEffect(() => {
-    //finding input names
+    //find input names for labels and placeholders
     const index = inputNames.findIndex(({ name }) => name === params.name);
     setInd(index);
   }, [params.name]);
@@ -47,7 +47,7 @@ export function InputDiv(params: {
               params.movie[
                 `${
                   ind !== undefined ? inputNames[ind].modelName : ""
-                }` as keyof NewVHSDetails
+                }` as keyof VHSDetails
               ]
             }
           ></textarea>
@@ -69,13 +69,13 @@ export function InputDiv(params: {
               params.movie[
                 `${
                   ind !== undefined ? inputNames[ind].modelName : ""
-                }` as keyof NewVHSDetails
+                }` as keyof VHSDetails
               ] === 0
                 ? ""
                 : params.movie[
                     `${
                       ind !== undefined ? inputNames[ind].modelName : ""
-                    }` as keyof NewVHSDetails
+                    }` as keyof VHSDetails
                   ]
             }
           ></input>

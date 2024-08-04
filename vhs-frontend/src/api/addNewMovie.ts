@@ -1,13 +1,10 @@
 "use server";
-import { inputNames } from "@/model/inputNames";
-import { NewVHSDetails } from "@/model/vhs";
 import { redirect } from "next/navigation";
 
 export async function addNewMovie(formData: FormData) {
   /**POST new movie into database */
   const response = await fetch("http://localhost:3000/api/vhs", {
     method: "POST",
-
     body: formData,
   });
 

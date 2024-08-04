@@ -7,9 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/catalogue.module.css";
 import { useEffect, useState } from "react";
-import { headers } from "next/headers";
 import { getAllVhs } from "@/api/getAllVhs";
-import { useWindowSizeContext } from "@/context/WindowSizeContext";
 
 export default function Catalogue() {
   const [vhs, setVhs] = useState<VHSDetails[] | undefined>();
@@ -20,8 +18,6 @@ export default function Catalogue() {
       setVhs(data);
     });
   }, []);
-
-  const { mobileWindowSize } = useWindowSizeContext();
 
   return (
     <>

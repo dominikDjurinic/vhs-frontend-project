@@ -5,7 +5,7 @@ import { editMovie } from "@/api/editMovie";
 import { useWindowSizeContext } from "@/context/WindowSizeContext";
 import { alertMsgsText } from "@/model/alertMsgs";
 import { inputNames } from "@/model/inputNames";
-import { NewVHSDetails, VHSDetails } from "@/model/vhs";
+import { VHSDetails } from "@/model/vhs";
 import { useEffect, useState } from "react";
 
 export function AlertMsg(params: {
@@ -19,14 +19,14 @@ export function AlertMsg(params: {
   const formData = new FormData();
 
   useEffect(() => {
-    let ind = alertMsgsText.findIndex(({ btn }) => btn === params.typeMsg); //finding correct alert message
+    let ind = alertMsgsText.findIndex(({ btn }) => btn === params.typeMsg); //find correct alert message
     setIndex(ind);
   }, [params.typeMsg]);
 
   const { mobileWindowSize } = useWindowSizeContext();
 
   const prepareData = () => {
-    //setting data into FormData format
+    //set data into FormData format
     if (params.newMovie !== undefined) {
       for (let i = 0; i < 7; i++) {
         formData.append(

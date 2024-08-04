@@ -8,7 +8,7 @@ export function FavouriteBtn(params: { vhs: VHSDetails }) {
   let favArray: VHSDetails[] = [];
   let selectInit: Boolean;
 
-  //setting initial value of favourite state
+  //set initial value of favourite state
   if (favs !== null) {
     favArray = JSON.parse(favs);
     if (favArray.findIndex(({ id }) => id === params.vhs.id) !== -1) {
@@ -23,6 +23,7 @@ export function FavouriteBtn(params: { vhs: VHSDetails }) {
   const [selected, setSelected] = useState<Boolean>(selectInit);
 
   const changeFavourites = (select: Boolean) => {
+    //add or remove favourite from localStorage
     const favs = localStorage.getItem("favourites");
     let newFav: VHSDetails[] = [];
 

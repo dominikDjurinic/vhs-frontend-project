@@ -5,7 +5,7 @@ import { SearchBar } from "@/components/searchBar";
 import { headerNavigation } from "@/model/headerNavigation";
 import Link from "next/link";
 import { useWindowSizeContext } from "@/context/WindowSizeContext";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MenuPopUp } from "@/components/MenuPopUp";
 import { SearchPopUp } from "@/components/SearchPopUp";
 
