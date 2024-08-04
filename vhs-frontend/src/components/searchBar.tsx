@@ -50,7 +50,7 @@ export function SearchBar(params: { isSmall: boolean }) {
           }`}
         >
           {searchedVhs?.length === 0 ? (
-            <p>No result for &apos;{searchString}&apos;</p>
+            <p className="noResult">No result for &apos;{searchString}&apos;</p>
           ) : null}
           {searchedVhs?.map(({ title, genre, releasedAt, id }) => (
             <SearchItem

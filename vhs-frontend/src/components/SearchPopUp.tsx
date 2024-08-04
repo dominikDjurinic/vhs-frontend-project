@@ -47,7 +47,9 @@ export function SearchPopUp(params: { searchClicked: boolean }) {
         <>
           {searchedVhs?.length === 0 ? (
             <div className={styles.searchColumnDiv}>
-              <p>No result for &apos;{searchString}&apos;</p>
+              <p className="noResult">
+                No result for &apos;{searchString}&apos;
+              </p>
             </div>
           ) : null}
           {searchedVhs?.map(({ title, genre, releasedAt, id }) => (
