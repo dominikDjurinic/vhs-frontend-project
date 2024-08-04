@@ -1,0 +1,160 @@
+.detailsMainDiv{
+    min-height: 70vh;
+    width: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.detailsContainer{
+    height: 500px;
+    width: 70%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 2px gray);
+    background-color: white;
+    gap: 50px;   
+}
+
+.detailsContainer > img{
+    padding: 20px 80px;
+}
+
+.detailsDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.detailsInfo{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.vhsTitle{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.vhsCategory{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.vhsPrice{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.detailsRentalDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 5px;
+    padding-right: 50px;
+    text-align: center;
+}
+
+.detailsRentalDiv > p{
+    margin: 5px;
+}
+
+.descriptionContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionDiv{
+    width: 70%;
+    height: fit-content;
+}
+
+.descriptionDiv > p{
+    margin: 5px 0px;
+}
+
+.navBtn{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+.backNavBtn{
+    padding: 10px 20px;
+}
+
+.editNavBtn{
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+}
+
+.editNavBtn > div > p{
+    font-size: 16px;
+    text-decoration: underline;
+} 
+
+.availableP{
+    color: var(--green-color);
+}
+
+.notAvailableP{
+    color: var(--red-color);
+}
+
+.mobileAddDiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mobileAddBtn{
+    width: 170px;
+    margin: 10px 10px;
+}
+
+@media screen and (max-width: 1300px) {
+    .detailsContainer{
+        height: fit-content;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 0px;
+        gap: 20px;
+        padding-bottom: 80px;
+        margin-bottom: 20px;
+        filter: none;
+    }
+    
+    .detailsInfo{
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .detailsRentalDiv{
+        padding: 0px;
+        gap: 10px;
+    }
+
+    .descriptionContainer{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

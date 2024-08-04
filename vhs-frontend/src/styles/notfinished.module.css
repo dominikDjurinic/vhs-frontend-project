@@ -1,0 +1,39 @@
+.notFinishedContainer{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    padding-top: 30vh;
+    gap: 30px;
+}
+
+.notFinishedContainer > p{
+    margin: 0px;
+}
+
+.siteName{
+    color: var(--yellow-background);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.navBtn{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--yellow-background);
+    padding: 20px 50px;
+    border-radius: 10px;
+}
+
+.navBtn:hover{
+    background-color: var(--hover-yellow);
+}
+
+.navBtn > p{
+    margin: 0px;
+}
