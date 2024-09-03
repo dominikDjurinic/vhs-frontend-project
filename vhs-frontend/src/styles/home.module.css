@@ -1,0 +1,122 @@
+.homeTitleContainer{
+  min-height: 50vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--yellow-background);
+  position: relative;
+  z-index: 2;
+}
+
+.homeTitleText{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.homeTitleText > h1{
+  margin: 0px;
+}
+
+
+#homeLogo{
+  width: 400px;
+  height: auto;
+}
+
+#duckLegs{
+  width: 200px;
+  height: auto;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+  opacity: 40%;
+}
+
+#duckLegs2{
+  width: 200px;
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  opacity: 30%;
+}
+
+.sloganContainer{
+  height: fit-content;
+  font-size: 20px;
+}
+
+.highlighted{
+  color: #FF9B15;
+  filter: drop-shadow(0px 3px 3px #F5B100);
+  font-size: 50px;
+}
+
+.highlightedBlack{
+  color: #FF9B15;
+}
+
+.homeBtmContainer{
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 50px;
+  background-image: url("../../public/backVhs.png");
+  position: relative;
+}
+
+.textMsg{
+  text-align: center;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnCatalogue{
+  font-size: 20px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--yellow-background);
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  filter: drop-shadow(0px 3px 2px gray);
+}
+
+.btnCatalogue:hover{
+  background-color: var(--hover-yellow);
+}
+
+@media screen and (max-width: 800px) {
+  .homeTitleContainer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  .homeTitleText{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .textMsg{
+    padding: 0px 20px;
+  }
+}

@@ -1,0 +1,321 @@
+.formMainDiv{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainDivEdit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0px;
+}
+
+.formContainer{
+    width: 70%;
+    min-height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 2px gray);
+    background-color: white;
+    gap: 100px;
+}
+
+.form2Container{
+    width: 80%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 2px gray);
+    background-color: white;
+    gap: 100px;
+    padding: 30px;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.imageAboutDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.inputDiv > label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.inputBox{
+    border-radius: 10px;
+    border: 1px solid black; 
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 400px;
+}
+
+.inputBoxDescript{
+    border-radius: 10px;
+    border: 1px solid black; 
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 60vw;
+    height: 300px;
+}
+
+.inputWithAddition{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.addImageDiv{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 10px;
+}
+
+.addImageDiv > p{
+    width: 100px;
+    text-decoration: underline;
+    text-align: center;
+    cursor: pointer;
+}
+
+#logoImg{
+    width: 200px;
+    height: auto;
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    gap: 10px;
+    min-width: 200px;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 10px;
+    cursor: pointer;
+    filter: drop-shadow(0px 3px 2px gray);
+}
+
+
+.btnNext{
+    background-color: var(--yellow-background);
+}
+
+.btnNext:hover{
+    background-color: var(--hover-yellow);
+}
+
+
+.btnPrev{
+    background-color: var(--dark-gray-background);
+    visibility: hidden;
+}
+.btnPrev:hover{
+    background-color: var(--hover-gray);
+}
+
+.visiblePrev{
+    visibility: visible;
+}
+
+.btnDiv{
+    position: sticky;
+    bottom: 200px;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btnContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.titleSection{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.newMoviTitleDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    gap: 20px;
+}
+
+.newMoviTitleDiv > img{
+    cursor: pointer;
+}
+
+.editMovieTitleDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navBtn{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+}
+
+.closeNavBtn{
+    padding: 10px 20px;
+}
+
+.btnSaveContainer{
+    display: flex;
+    justify-content: end;
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.btnDeleteContainer{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0px;
+}
+
+.btnDelete{
+    background-color: var(--red-color);
+    color: white;
+    width: 250px;
+}
+
+.btnDelete:hover{
+    background-color: var(--hover-red);
+}
+
+.inputWithAddition > textarea{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+}
+
+.addImageDiv > input[type="file"]::file-selector-button {
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 5px;
+}
+
+@media screen and (max-width: 1300px) {
+    .formMainDiv{
+        height: fit-content;
+    }
+    
+    .formContainer{
+        width: 100%;
+        min-height: 700px;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 0px;
+        padding-bottom: 30px;
+        filter: none;
+    }
+
+    .btnDiv{
+        width: 95%;
+    }
+
+    .inputDiv > label{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .inputDiv >label >p{
+        margin: 0px;
+        font-weight: normal;
+        font-size: 16px;
+    }
+
+    .btn{
+        min-width: 70px;
+        height: 40px;
+    }
+
+    .btnSubmit{
+        width: 200px;
+    }
+
+    .inputBoxDescript{
+        height: 500px;
+        width: 500px;
+    }
+
+    .form2Container{
+        width: 100%;
+        border-radius: 0px;
+        gap: 20px;
+        filter: none;
+    }
+
+    .imageAboutDiv{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .inputContainer{
+        width: fit-content;
+        align-items: center;
+    }
+
+    .inputDiv{
+        width: fit-content;
+    }
+    .inputWithAddition{
+        width: fit-content;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .inputBox{
+        width: 300px;
+    }
+
+    .inputBoxDescript{
+        width: 300px;
+    }
+
+}

@@ -1,0 +1,89 @@
+.catalogueContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gray-background);
+    padding-bottom: 50px;
+}
+
+.catalogueInfoContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.catalogueInfoContainer > p{
+    padding: 20px 20px;
+}
+
+
+.cellsGridContainer{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.cellsListContainer{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.gridListSwitch{
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 2px gray);
+    background-color: white;
+    padding: 10px;
+    margin: 0px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.switchImg{
+    cursor: pointer;
+}
+
+.addNewMovieBtn{
+    position: fixed;
+    bottom: 20px;
+    right: 0px;
+    margin: 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    opacity: 1;
+}
+  
+.addNewMovieBtnIcon{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: var(--yellow-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 3px 2px gray);
+}
+
+.addNewMovieBtnIcon:hover{
+    background-color: var(--hover-yellow);
+}
+
+  
+.addMovieMsg{
+    width: 80px;
+    text-align: center;
+    font-weight: bold;
+}
