@@ -1,6 +1,6 @@
 # Old Duck - VHS Rental Shop
 
-<img src="Logo.png" width="400">
+<img src="/vhs-frontend/Logo.png" width="400">
 
 Old Duck is a web application created as part of a project for applying for a front-end position at True North.
 
@@ -37,42 +37,42 @@ Below you can view some pages of Old Duck - VHS Store Applications:
 
 ### **1.Home Page**
 
-![home page](public/homePage.png)
+![home page](/vhs-frontend/public/homePage.png)
 <br/>
 <br/>
 
 ### **2.Catalogue Page**
 
-![catalog page](public/CataloguePageGrid.png)
-![catalog page2](public/CataloguePageList.png)
+![catalog page](/vhs-frontend/public/CataloguePageGrid.png)
+![catalog page2](/vhs-frontend/public/CataloguePageList.png)
 <br/>
 <br/>
 
 ### **3.Details Page**
 
-![details page](public/detailsPage.png)
+![details page](/vhs-frontend/public/detailsPage.png)
 <br/>
 <br/>
 
 ### **4.Add New Movie Page**
 
-![addNew page](public/addNew1.png)
-![addNew page2](public/addNew2.png)
-![addNew page3](public/addNew3.png)
-![addNew page4](public/addNew4.png)
+![addNew page](/vhs-frontend/public/addNew1.png)
+![addNew page2](/vhs-frontend/public/addNew2.png)
+![addNew page3](/vhs-frontend/public/addNew3.png)
+![addNew page4](/vhs-frontend/public/addNew4.png)
 <br/>
 <br/>
 
 ### **5.Edit Movie Page**
 
-![edit page](public/editPage1.png)
-![edit page2](public/editPage2.png)
+![edit page](/vhs-frontend/public/editPage1.png)
+![edit page2](/vhs-frontend/public/editPage2.png)
 <br/>
 <br/>
 
 ### **6.Favorites Page**
 
-![favorites page](public/favoritesPage.png)
+![favorites page](/vhs-frontend/public/favoritesPage.png)
 <br/>
 
 Created: Dominik Đurinić, august 2024., Zagreb
